@@ -1,0 +1,11 @@
+.square {
+  display: inline-block;
+  margin: 5px;
+}
+
+.square button {
+  border: none;
+  background-color: #00c2cb;
+}
+
+

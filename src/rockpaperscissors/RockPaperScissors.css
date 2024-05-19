@@ -1,0 +1,33 @@
+.rock-paper-scissors {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.choice img {
+  max-height: 150px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.result {
+  font-size: 1.5rem;
+  color: #343a40;
+}
+@media (max-width: 768px) {
+  .computer-hand{
+      margin-top: -175px;
+      margin-right: -170px;
+  }
+  .user-hand{
+    margin-right: -174px;
+    margin-top: 10px;
+}
+}
