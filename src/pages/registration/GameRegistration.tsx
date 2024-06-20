@@ -34,11 +34,11 @@ const GameRegistration: React.FC = () => {
   }, []);
 
   const capitalizeFirstLetter = (str: string) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   };
 
   const isEmailRegistered = (email: string) => {
-    return registeredUsers.some(user => user.email === email);
+    return registeredUsers.some((user) => user.email === email);
   };
 
   const isNameValid = (name: string) => {
@@ -47,7 +47,10 @@ const GameRegistration: React.FC = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    const capitalizedValue = name === 'firstName' || name === 'lastName' ? capitalizeFirstLetter(value) : value;
+    const capitalizedValue =
+      name === "firstName" || name === "lastName"
+        ? capitalizeFirstLetter(value)
+        : value;
     setFormData({
       ...formData,
       [name]: capitalizedValue,
@@ -67,8 +70,8 @@ const GameRegistration: React.FC = () => {
     }
 
     const newUser: User = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
+      firstName: capitalizeFirstLetter(formData.firstName),
+      lastName: capitalizeFirstLetter(formData.lastName),
       email: formData.email,
     };
 
@@ -168,3 +171,4 @@ const GameRegistration: React.FC = () => {
 };
 
 export default GameRegistration;
+
